@@ -1,0 +1,23 @@
+<html>
+    <head>
+    <style type="text/css">
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #EEE;
+            color: #333;
+        }
+
+        h1 {
+            color: #02A1FE;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Tax documents available</h1>
+        <p>
+            New tax documents were generated for <a href="{{ portfolio.url }}">{{portfolio.url}}</a>.
+            Visit the portfolio to download the files.
+        </p>
+    </body>
+</html>
+

@@ -1,0 +1,23 @@
+<html>
+    <head>
+    <style type="text/css">
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #EEE;
+            color: #333;
+        }
+
+        h1 {
+            color: #02A1FE;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Your exercise was approved</h1>
+        <p>
+            Your exercise with {{ exercise.grant.issuer.name }} on grant {{ exercise.grant.label }} has been approved.
+            Visit {{ exercise.url }} to see next steps.
+        </p>
+    </body>
+</html>
+

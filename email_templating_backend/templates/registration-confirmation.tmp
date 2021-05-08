@@ -1,0 +1,22 @@
+<html>
+    <head>
+    <style type="text/css">
+        body {
+            font-family: Tahoma, sans-serif;
+            background-color: #EEE;
+            color: #333;
+        }
+
+        h1 {
+            color: #02A1FE;
+        }
+    </style>
+    </head>
+    <body>
+        <h1>Welcome to Carta! {{ user.name }}</h1>
+        <p>
+            Please visit <a href="{{ confirmation.url }}">this link</a> to confirm your account.
+        </p>
+    </body>
+</html>
+
