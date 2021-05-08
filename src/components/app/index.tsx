@@ -1,44 +1,31 @@
 import React, { useEffect, useState } from 'react';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch
+} from "react-router-dom";
 
-interface EmailTemplate {
-
-}
+import TemplateEditor from "../template_editor";
+import TemplateList from "../template_list";
+import NotFound from "../not_found";
 
 function App() {
-  const [emailTemplates, setEmailTemplates] = useState([])
-
-  useEffect(() => {
-    fetch("http://0.0.0.0:5000/templates")
-      .then(res => {
-        return res.json()
-        }
-      )
-      .then(
-        (result) => {
-          console.log(result)
-          setEmailTemplates(result)
-        }
-      )
-  }, []);
-
-  const renderEmailTemplate = (template: EmailTemplate) => {
-    return (
-        <p>{template}</p>
-    )
-  }
-
-  const renderEmailTemplates = () => {
-    return (
-      emailTemplates.map((template: EmailTemplate) => {
-        return renderEmailTemplate(template)
-      })
-    )
-  }
-
   return (
-    <div className="App">
-        {renderEmailTemplates()}
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/:templateId">
+          <TemplateEditor />
+        </Route>
+        <Route exact path="/">
+          <TemplateList />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
