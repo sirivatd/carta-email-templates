@@ -10,10 +10,23 @@ export const containsValidContextVariables = (contextVariables: string) => {
 
 }
 
+// Recursive regex string matching
+// Input: "<html> <head> <style type="text"> {{ user.firstName }} ... {{ user.lastName }} ... {{ location }}"
+// Output: ["user.firstName", "user.lastName", "location"]
 export const extractContentVariables = (emailTemplateString: string) => {
+  const templatePattern = /[^{\{]+(?=}\})/g
+  let contentVariables = emailTemplateString.match(templatePattern);
+
+  return contentVariables && contentVariables.map(variable => variable.trim());
+}
+
+// Input: ["exercise.grant.issuer.name", "exercise.grant.label", "exercise.url"]
+// Output: {"exercise": {"grant": {"issuer": {"name": }, {"label": }}}, {"url": }}
+export const formJSONFromString = (contentVariable: string) => {
 
 }
 
-export const formJSONFromObject = (contentVariables: string[]) => {
-  
+export const formJSONFromArray = (contentVariables: string[]) => {
+  contentVariables.forEach(variable => {
+  });
 }
