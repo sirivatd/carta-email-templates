@@ -7,7 +7,7 @@ import {
   useRouteMatch
 } from "react-router-dom";
 
-import TemplateEditor from "../template_editor";
+import TemplateShow from "../template_show";
 import TemplateList from "../template_list";
 import NotFound from "../not_found";
 
@@ -15,12 +15,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/:templateId">
-          <TemplateEditor />
-        </Route>
-        <Route exact path="/">
-          <TemplateList />
-        </Route>
+        <Route exact path="/:templateId" component={TemplateShow} />
+        <Route exact path="/" component={TemplateList} />
         <Route>
           <NotFound />
         </Route>
