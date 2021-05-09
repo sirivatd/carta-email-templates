@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { extractContentVariables, formJSONFromArray } from "../../utils";
+// import { extractContentVariables, formJSONFromArray } from "../../utils";
 
 interface Props {
   templateName: string
@@ -18,9 +18,9 @@ function TemplateContextVariables(props: Props) {
     )
     .then(
       (result) => {
-        let extractedVariables = extractContentVariables(result.content)
-        setContextVariables(extractedVariables);
-        setContentVariableString(formJSONFromArray(extractedVariables));
+        // let extractedVariables: string[] = extractContentVariables(result.content)
+        // setContextVariables(extractedVariables);
+        // setContentVariableString(formJSONFromArray(extractedVariables));
       }
     )
   }, []);

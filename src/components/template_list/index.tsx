@@ -50,8 +50,10 @@ function TemplateList() {
   );
 }
 
-const mapStateToProps = state => {
-  return { allTemplateNames: state.allTemplateNames }
-};
+// const mapStateToProps = state => {
+//   return { allTemplateNames: state.allTemplateNames }
+// };
 
-export default connect(mapStateToProps)(TemplateList);
+// export default connect(mapStateToProps)(TemplateList);
+
+export default TemplateList;
