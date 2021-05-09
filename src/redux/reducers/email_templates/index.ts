@@ -1,15 +1,15 @@
 const initialState = {
   allEmailTemplateNames: [],
   selectedEmailTemplateName: "",
-  isLoading: false,
-  contextVariables: []
+  selectedTemplateContext: "",
+  contextVariables: "",
 };
 
-const emailTemplates = (state = initialState, action: any) => {
+const emailTemplatesReducer = (state = initialState, action: any) => {
   switch(action.type) {
     default:
       return state;
   }
 }
 
-export default emailTemplates;
+export default emailTemplatesReducer;

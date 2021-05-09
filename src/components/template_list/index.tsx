@@ -6,6 +6,7 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
+import { connect } from 'react-redux';
 
 interface EmailTemplate {
 
@@ -49,4 +50,8 @@ function TemplateList() {
   );
 }
 
-export default TemplateList;
+const mapStateToProps = state => {
+  return { allTemplateNames: state.allTemplateNames }
+};
+
+export default connect(mapStateToProps)(TemplateList);
