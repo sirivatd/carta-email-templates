@@ -1,7 +1,7 @@
 /* eslint-disable jest/valid-expect */
 import { expect } from "chai";
 
-import { extractContentVariables } from "../utils";
+import { extractContentVariables, formJSONFromArray, formJSONFromString } from "../utils";
 
 describe("template show utils", () => {
   describe("extractContentVariables", () => {
@@ -22,5 +22,19 @@ describe("template show utils", () => {
     it("is idempotent", () => {
       // TODO
     });
+  });
+
+  describe("formJSONFromString", () => {
+    let templateVariable = "user.location.city";
+
+    const result = formJSONFromString(templateVariable);
+    expect(result).to.equal('{"user":{"location":{"city":"*placeholder*"}}}');
+  });
+
+  describe("formJSONFromArray", () => {
+    let templateVariables = ["exercise.grant.issuer.name", "exercise.grant.label"];
+    const result = formJSONFromArray(templateVariables);
+    
+    expect(result).to.equal('{"exercise":{"grant":{"issuer":{"name":"*placeholder*"},"label":"*placeholder*"}}}')
   });
 });
